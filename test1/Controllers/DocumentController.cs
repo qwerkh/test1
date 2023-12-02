@@ -17,6 +17,15 @@ namespace test1.Controllers
         {
             return File(Server.MapPath("~/Content/test.txt"), "text/plain","myfile.txt");
         }
+        public RedirectResult ShowInternal()
+        {
+            return Redirect("/Home/ShowInfo");
+        }
+
+        public RedirectResult ShowExternal()
+        {
+            return Redirect("https://google.com");
+        }
 
     }
 }

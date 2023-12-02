@@ -16,16 +16,20 @@ namespace test1.Controllers
             return View();
         }
         //Different Name
-        public ActionResult ShowInfo()
+        [ActionName("Info")]
+        public ActionResult ShowInfo(string id)
         {
+            ViewBag.id = id;
             return View("Show");
         }
         //In Share Folder
+        [NonAction]
         public ActionResult Detail()
         {
             return View("Details");
         }
         //Different Controller
+        [HttpPost]
         public ActionResult ShowMoreDetail()
         {
             return View("~/Views/About/MyProfile.cshtml");
